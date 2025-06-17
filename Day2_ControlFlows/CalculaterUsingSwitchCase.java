@@ -1,3 +1,4 @@
+package Day2_ControlFlows;
 import java.util.*;
 public class CalculaterUsingSwitchCase {
     public static void main(String[] args) {
