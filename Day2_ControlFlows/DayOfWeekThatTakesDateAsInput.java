@@ -9,14 +9,12 @@ public class DayOfWeekThatTakesDateAsInput {
         int month = sc.nextInt();
         System.out.println("Enter the year (yyyy): ");
         int year = sc.nextInt();
-        // Adjust month and year for Zeller's Congruence
         if (month < 3) {
             month += 12;
             year--;
         }   
-        // Zeller's Congruence formula
-        int k = year % 100; // The year within the century
-        int j = year / 100; // The zero-based century (actually floor(year/100))
+        int k = year % 100; 
+        int j = year / 100; 
         int f = date + (13 * (month + 1)) / 5 +
                 k + k / 4 + j / 4 - 2 * j;      
                 int result = f % 7;
