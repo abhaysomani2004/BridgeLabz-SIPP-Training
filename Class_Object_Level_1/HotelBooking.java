@@ -19,6 +19,9 @@ public class HotelBooking {
         this.guestName = other.guestName;
         this.roomType = other.roomType;
         this.nights = other.nights;
+
+
+        
     }
 
     public void displayBooking() {
