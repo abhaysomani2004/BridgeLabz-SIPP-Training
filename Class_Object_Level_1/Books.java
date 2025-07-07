@@ -8,6 +8,8 @@ public class Books {
         this.title = title;
         this.author = author;
         this.price = price;
+
+        
         this.isAvailable = isAvailable;
     }
 
