@@ -8,6 +8,8 @@ public class CarRental {
         this.customerName = "Unknown";
         this.carModel = "Standard";
         this.rentalDays = 1;
+
+        
         this.costPerDay = getCostPerDay(this.carModel);
     }
 
