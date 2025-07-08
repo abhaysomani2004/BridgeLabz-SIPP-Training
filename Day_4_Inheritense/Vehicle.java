@@ -18,6 +18,8 @@ public class Vehicle {
         int seatCapacity;
 
         Car(int maxSpeed, String fuelType, int numDoors) {
+
+            
             super(maxSpeed, fuelType);
             this.seatCapacity = numDoors;
         }

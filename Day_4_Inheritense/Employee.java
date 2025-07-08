@@ -10,6 +10,9 @@ public class Employee {
         this.slary = slary;
     }
 
+
+    
+
     void display() {
         System.out.println("Employee Name: " + name);
         System.out.println("Employee Salary: " + slary);

@@ -13,6 +13,7 @@ class Animal {
         System.out.println("Animals makes a sound");
     }
 
+    
     static class Dog extends Animal{
         Dog(String name, int age) {
             super(name, age);

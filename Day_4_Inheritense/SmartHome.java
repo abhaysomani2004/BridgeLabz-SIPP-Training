@@ -15,6 +15,8 @@ class Device{
     }
 }
 
+
+
 class Thermostat extends Device{
     int temperatureSetting;
 
