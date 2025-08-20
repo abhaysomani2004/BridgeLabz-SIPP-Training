@@ -1,0 +1,26 @@
+CLASS Doctor
+    ATTRIBUTE name, specialization
+
+CLASS Hospital
+    ATTRIBUTE deptMap : Map<String, List<Doctor>>
+
+    METHOD addDoctor(department, doctor)
+        IF department not in deptMap
+            deptMap[department] ← new List<Doctor>()
+        deptMap[department].add(doctor)
+
+    METHOD filterDoctorsBySpecialization(department, specialization)
+        result ← EMPTY LIST
+        FOR each doctor IN deptMap[department]
+            IF doctor.specialization == specialization
+                result.add(doctor)
+        RETURN result
+
+MAIN
+    hospital ← NEW Hospital()
+    hospital.addDoctor("Cardiology", Doctor("Dr. A", "Heart"))
+    hospital.addDoctor("Cardiology", Doctor("Dr. B", "Heart"))
+    hospital.addDoctor("Neurology", Doctor("Dr. C", "Brain"))
+
+    doctors ← hospital.filterDoctorsBySpecialization("Cardiology", "Heart")
+    PRINT doctors
