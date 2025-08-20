@@ -1,0 +1,26 @@
+CLASS Account
+    balance
+
+    METHOD deposit(amount)
+        balance = balance + amount
+
+    METHOD withdraw(amount)
+        PRINT "Base withdraw - to be overridden"
+
+CLASS Saving EXTENDS Account
+    METHOD withdraw(amount)
+        IF balance - amount >= 1000
+            balance = balance - amount
+            PRINT "Withdrawal successful. Remaining: " + balance
+        ELSE
+            PRINT "Insufficient balance. Minimum 1000 required."
+
+CLASS Current EXTENDS Account
+    overdraftLimit
+
+    METHOD withdraw(amount)
+        IF balance + overdraftLimit >= amount
+            balance = balance - amount
+            PRINT "Withdrawal successful with overdraft. Remaining: " + balance
+        ELSE
+            PRINT "Overdraft limit exceeded."

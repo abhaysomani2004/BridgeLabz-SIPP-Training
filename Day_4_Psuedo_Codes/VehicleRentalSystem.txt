@@ -1,0 +1,27 @@
+INTERFACE Rentable
+    METHOD rent()
+    METHOD returnVehicle()
+
+ABSTRACT CLASS Vehicle IMPLEMENTS Rentable
+    id, brand, rentPerDay
+
+CLASS Car EXTENDS Vehicle
+    METHOD rent()
+        PRINT "Car rented with ID: " + id
+    METHOD returnVehicle()
+        PRINT "Car returned."
+
+CLASS Bike EXTENDS Vehicle
+    METHOD rent()
+        PRINT "Bike rented with ID: " + id
+    METHOD returnVehicle()
+        PRINT "Bike returned."
+
+CLASS VehicleFactory
+    METHOD createVehicle(type)
+        IF type == "Car" → RETURN new Car()
+        IF type == "Bike" → RETURN new Bike()
+
+// Usage
+vehicle = VehicleFactory.createVehicle("Car")
+vehicle.rent()
