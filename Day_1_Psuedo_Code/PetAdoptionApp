@@ -1,0 +1,25 @@
+CLASS Pet
+    ATTRIBUTE name
+    ATTRIBUTE age
+
+    CONSTRUCTOR(name, age)
+        SET this.name = name
+        SET this.age = age
+
+CLASS Dog EXTENDS Pet
+    CONSTRUCTOR(name, age)
+        CALL super(name, age)
+
+CLASS Cat EXTENDS Pet
+    CONSTRUCTOR(name, age)
+        CALL super(name, age)
+
+CLASS Bird EXTENDS Pet
+    CONSTRUCTOR(name, age)
+        CALL super(name, age)
+
+MAIN
+    CREATE dog = Dog("Tommy", 2)
+    CREATE cat = Cat("Kitty", 1)
+    CREATE bird = Bird("Coco", 3)
+    PRINT dog.name, cat.name, bird.name
