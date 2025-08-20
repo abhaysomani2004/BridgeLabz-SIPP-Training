@@ -1,0 +1,26 @@
+CLASS Customer
+    name, address, phone
+
+CLASS Restaurant
+    name, menu
+
+CLASS DeliveryBoy
+    name, vehicleNo
+
+CLASS Order
+    customer : Customer
+    restaurant : Restaurant
+    deliveryBoy : DeliveryBoy
+    items : List<String>
+
+    METHOD constructor(cust, rest, boy, items)
+        customer ← cust
+        restaurant ← rest
+        deliveryBoy ← boy
+        items ← items
+
+    METHOD displayOrder()
+        PRINT "Order from " + restaurant.name
+        PRINT "Customer: " + customer.name
+        PRINT "Delivery by: " + deliveryBoy.name
+        PRINT "Items: " + items

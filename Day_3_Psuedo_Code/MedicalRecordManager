@@ -1,0 +1,32 @@
+# INTERFACE Searchable
+#     METHOD search(keyword)
+
+# INTERFACE Printable
+#     METHOD printReport()
+
+# CLASS XRayReport IMPLEMENTS Searchable, Printable
+#     DATA: content
+#     METHOD search(keyword)
+#         IF keyword is inside content
+#             RETURN "Found in XRayReport"
+#         ELSE
+#             RETURN "Not Found"
+#     METHOD printReport()
+#         DISPLAY "X-Ray Report: " + content
+
+# CLASS BloodTestReport IMPLEMENTS Searchable, Printable
+#     DATA: content
+#     METHOD search(keyword)
+#         IF keyword is inside content
+#             RETURN "Found in BloodTestReport"
+#         ELSE
+#             RETURN "Not Found"
+#     METHOD printReport()
+#         DISPLAY "Blood Test Report: " + content
+
+# MAIN PROGRAM
+#     CREATE report1 WITH content = "Chest XRay - Clear"
+#     CREATE report2 WITH content = "Hemoglobin Normal"
+
+#     DISPLAY result of report1.search("Chest")
+#     CALL report2.printReport()
