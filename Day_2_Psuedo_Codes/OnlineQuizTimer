@@ -1,0 +1,19 @@
+CLASS QuizTimer
+    ATTRIBUTE slots[]   // circular array of time slots for questions
+    ATTRIBUTE front, rear, size
+
+    METHOD constructor(size)
+        slots[size]
+        front ← 0
+        rear ← -1
+        size ← size
+
+    METHOD addSlot(time)
+        rear ← (rear + 1) % size
+        slots[rear] ← time
+
+    METHOD startTimer()
+        FOR i FROM 0 TO size-1
+            PRINT "Time left for Question " + (i+1) + " : " + slots[i]
+            IF slots[i] < 5 THEN
+                PRINT "⚠ Warning: Time almost up!"

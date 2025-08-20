@@ -1,0 +1,13 @@
+CLASS Job
+    ATTRIBUTE id, deadline, processingTime, priority
+
+CLASS JobScheduler
+    ATTRIBUTE priorityQueue   // min-heap based on deadline & processingTime
+
+    METHOD addJob(job)
+        INSERT job INTO priorityQueue BASED ON (deadline, processingTime)
+
+    METHOD executeJobs()
+        WHILE priorityQueue is not empty
+            job ← REMOVE highest priority from priorityQueue
+            PRINT "Executing Job: " + job.id
