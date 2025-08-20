@@ -1,0 +1,24 @@
+CLASS Patient
+    id, name, age, disease
+
+CLASS PatientManager
+    patients : HashMap<id, Patient>
+
+    METHOD addPatient(patient)
+        patients[patient.id] ← patient
+
+    METHOD getPatient(id)
+        RETURN patients[id]
+
+    METHOD updatePatient(id, newPatient)
+        patients[id] ← newPatient
+
+    METHOD deletePatient(id)
+        REMOVE patients[id]
+
+MAIN
+    manager ← PatientManager()
+    p1 ← Patient(101, "John", 30, "Flu")
+    manager.addPatient(p1)
+    PRINT manager.getPatient(101).name
+    manager.deletePatient(101)

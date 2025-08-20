@@ -1,0 +1,20 @@
+CLASS MazeSolver
+    METHOD solveMaze(maze, x, y, solution)
+        IF (x,y) is goal → RETURN true
+
+        IF (x,y) is safe
+            solution[x][y] ← 1
+
+            IF solveMaze(maze, x+1, y, solution) → RETURN true
+            IF solveMaze(maze, x, y+1, solution) → RETURN true
+
+            solution[x][y] ← 0   // backtrack
+            RETURN false
+
+        RETURN false
+
+MAIN
+    maze ← 2D grid (1 = path, 0 = wall)
+    solution ← 2D grid initialized to 0
+    IF solveMaze(maze,0,0,solution) → PRINT solution
+    ELSE PRINT "No Path Found"
