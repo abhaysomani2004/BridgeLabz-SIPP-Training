@@ -1,0 +1,8 @@
+
+INITIALIZE marks = HashMap<String, Integer>
+ADD ("Abhay", 85)
+ADD ("Ravi", 90)
+ADD ("Sneha", 75)
+
+FIND highest = student with max(marks.values) USING streams
+PRINT "Topper: " + highest

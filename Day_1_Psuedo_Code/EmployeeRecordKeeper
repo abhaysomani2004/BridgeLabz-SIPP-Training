@@ -1,0 +1,15 @@
+CLASS Employee
+    ATTRIBUTE name
+    ATTRIBUTE department
+
+    CONSTRUCTOR(name, department)
+        SET this.name = name
+        SET this.department = department
+
+INITIALIZE employees = ArrayList<Employee>
+ADD Employee("Abhay", "IT")
+ADD Employee("Ravi", "HR")
+ADD Employee("Sneha", "IT")
+
+FILTER itEmployees = employees WHERE department == "IT" USING streams
+PRINT itEmployees

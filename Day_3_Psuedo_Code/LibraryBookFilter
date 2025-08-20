@@ -1,0 +1,15 @@
+CLASS Book
+    title, year, rating
+
+MAIN
+    books ← List<Book>()
+    books.add(Book("Java", 2018, 4.7))
+    books.add(Book("C++", 2012, 4.3))
+    books.add(Book("AI", 2020, 4.8))
+
+    filtered ← books.stream()
+                    .filter(b → b.year > 2015)
+                    .filter(b → b.rating > 4.5)
+                    .collect(toList)
+
+    PRINT filtered

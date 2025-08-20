@@ -1,0 +1,20 @@
+CLASS Item
+    ATTRIBUTE name, price
+
+CLASS Cart
+    ATTRIBUTE items : List<Item>
+
+    METHOD addItem(item)
+        items.add(item)
+
+    GENERIC METHOD calculateTotalPrice()
+        total ← 0
+        FOR each item IN items
+            total ← total + item.price
+        RETURN total
+
+MAIN
+    cart ← NEW Cart()
+    cart.addItem(Item("Shirt", 500))
+    cart.addItem(Item("Shoes", 1500))
+    PRINT "Total Price: " + cart.calculateTotalPrice()
