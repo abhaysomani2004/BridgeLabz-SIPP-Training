@@ -1,0 +1,24 @@
+INITIALIZE normalQueue = empty
+INITIALIZE emergencyQueue = empty
+
+FUNCTION addCustomer(name, priority)
+    IF priority == "emergency"
+        ENQUEUE name INTO emergencyQueue
+    ELSE
+        ENQUEUE name INTO normalQueue
+
+FUNCTION serveCustomer()
+    IF emergencyQueue not empty
+        DEQUEUE customer FROM emergencyQueue
+        PRINT "Serving Emergency: " + customer
+    ELSE IF normalQueue not empty
+        DEQUEUE customer FROM normalQueue
+        PRINT "Serving Normal: " + customer
+    ELSE
+        PRINT "No customers in queue"
+
+MAIN
+    CALL addCustomer("A", "normal")
+    CALL addCustomer("B", "emergency")
+    CALL serveCustomer()   // serves B first
+    CALL serveCustomer()   // serves A

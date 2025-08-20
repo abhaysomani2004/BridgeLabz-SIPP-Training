@@ -1,0 +1,17 @@
+INITIALIZE stack = empty
+
+FUNCTION typeText(text)
+    PUSH text TO stack
+
+FUNCTION undo()
+    IF stack is not empty
+        POP lastText FROM stack
+        PRINT "Undo: " + lastText
+    ELSE
+        PRINT "Nothing to undo"
+
+MAIN
+    CALL typeText("Hello")
+    CALL typeText("World")
+    CALL undo()   // removes "World"
+    CALL undo()   // removes "Hello"
