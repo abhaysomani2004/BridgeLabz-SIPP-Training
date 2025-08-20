@@ -1,0 +1,27 @@
+ABSTRACT CLASS Crop
+    ABSTRACT METHOD waterRequirement()
+    ABSTRACT METHOD harvest()
+
+CLASS Rice EXTENDS Crop
+    METHOD waterRequirement()
+        RETURN "High water requirement"
+
+    METHOD harvest()
+        PRINT "Rice harvested in 120 days"
+
+CLASS Wheat EXTENDS Crop
+    METHOD waterRequirement()
+        RETURN "Medium water requirement"
+
+    METHOD harvest()
+        PRINT "Wheat harvested in 90 days"
+
+MAIN
+    crop1 ← NEW Rice()
+    crop2 ← NEW Wheat()
+
+    PRINT crop1.waterRequirement()
+    CALL crop1.harvest()
+
+    PRINT crop2.waterRequirement()
+    CALL crop2.harvest()
