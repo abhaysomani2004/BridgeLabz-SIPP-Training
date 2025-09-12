@@ -17,6 +17,8 @@ CLASS PatientManager
         REMOVE patients[id]
 
 MAIN
+
+
     manager ← PatientManager()
     p1 ← Patient(101, "John", 30, "Flu")
     manager.addPatient(p1)
